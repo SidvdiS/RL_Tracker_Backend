@@ -4,12 +4,12 @@ const routes = require("./routes/httproutes");
 const websocket = require("./websocket");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-require("dotenv").config();
 
 const app = express();
 const server = http.createServer(app);
 
-const uri = process.env.MONGODB_URI;
+const uri =
+  "mongodb+srv://siddharthv4075sv:4shared1%40@cluster0.inu0phu.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Cluster0";
 
 console.log("uri", uri);
 
@@ -35,7 +35,7 @@ app.use("/", routes);
 
 // Use WebSocket
 websocket(server);
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
