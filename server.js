@@ -11,6 +11,8 @@ const server = http.createServer(app);
 
 const uri = process.env.MONGODB_URI;
 
+console.log("uri", uri);
+
 // Connect to MongoDB
 async function connect() {
   try {
